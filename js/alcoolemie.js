@@ -59,7 +59,7 @@ function getAmende(alcoolemie) {
  * Fonction qui retourne la sanction encourue en fonction de l'alcoolémie
  * 
  * @param {type} alcoolemie
- * @returns {undefined}
+ * @returns {String}
  */
 function getSanction(alcoolemie) {
     const seuil = 0.8;
@@ -68,4 +68,29 @@ function getSanction(alcoolemie) {
     } else {
         return '6 points + 2 ans de prison + suspension 3 ans + stage de sensibilisation'
     }
+}
+
+/**
+ * Fonction qui retourne une valeur entière récupérée via window.document.querySelector(id)
+ * 
+ * @param {type} id
+ * @returns {Number|getInt.valeur}
+ */
+function getInt(id) {
+    let valeur = parseInt(window.document.querySelector(id).value);
+    if (isNaN(valeur)) {
+        return 0;
+    } else {
+        return valeur;
+ }
+}
+
+/**
+ * Fonction qui retourne un string récupéré dans un champ via son id
+ * 
+ * @param {type} id
+ * @returns {Element.value}
+ */
+function getString(id) {
+    return window.document.querySelector(id).value;
 }
